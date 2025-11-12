@@ -116,6 +116,10 @@ def detected_sign():
         print(f"Error processing detected_sign: {e}")
         return jsonify({"status": "Error", "message": str(e)}), 400
 
+@app.route('/')
+def home():
+    return "Violation App is Running"
+
 if __name__ == '__main__':
     # Running on 0.0.0.0 allows access from other devices on the network
     app.run(host='0.0.0.0', port=5000, debug=True, use_reloader=False)
